@@ -1,0 +1,281 @@
+/* Selector universal "*" */
+* {
+    /* pegamos a un lateral */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /*Fuente*/
+    font-family: 'Courier New', Courier, monospace;
+    /*Eliminamos el subrallado*/
+    text-decoration: none;
+}
+
+body {
+    background-color: #585c67;
+}
+
+article {
+    margin-top: 170px;
+}
+
+header {
+    width: 100%;
+    /* Se mantiene arriba de todo, sin el espacio */
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* Se mantiene transparente si no se especifica */
+    background: #222831;
+}
+
+/* Arriba */
+
+.arriba {
+    width: 1200px;
+    display: flex;
+    /* Se centra orizontalmente */
+    align-items: center;
+    /* Pone el logo a un lado y el buscador del otro */
+    justify-content: space-between;
+    /*  */
+    padding: 10px;
+}
+
+.logo img {
+    width: 200px;
+}
+
+.buscar input {
+    width: 300px;
+    padding: 10px;
+}
+
+/* Menu */
+
+.todo_menu {
+    width: 100%;
+    height: 50px;
+    background-color: #393E46;
+    display: flex;
+    /* arriba y abajo ; izquierda y derecha */
+    /* para que no choque cuando se achique la pag. */
+    padding: 0px 20px;
+}
+
+.menu {
+    max-width: 1700px;
+    margin: auto;
+    height: 100%;
+}
+
+/* Se especifica que solo sea al menu principal, no al desplegable */
+nav>ul {
+    height: 100%;
+    display: flex;
+}
+
+
+nav>ul>li {
+    height: 100%;
+    list-style: none;
+    /* Para que el submenu aparezca donde debe */
+    position: relative;
+
+}
+
+nav>ul>li:first-child>a {
+    width: 100%;
+    background-image: url(../img/home.png);
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 25px 40px;
+}
+
+/* Hacemos que no se vaya el icono cuando pasemos el mouse */
+nav>ul>li:first-child:hover>a {
+    background-image: url(../img/home.png);
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+nav>ul>li>a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 14px;
+    color: wheat;
+    /* Los ponemos en amyoscula */
+    text-transform: uppercase;
+    font-size: 14px;
+    transition: all 300ms ease;
+    border-radius: 10%;
+
+}
+
+nav>ul>li>a:hover {
+    transform: scale(1.1);
+    background: #4b4d50;
+    box-shadow: 0px 0px 10px 0px rgb(0, 0, 0);
+}
+
+/* Menu desplegable */
+
+nav>ul>li>ul {
+    width: 200px;
+    list-style: none;
+    padding: 14px 0px;
+    position: absolute;
+    visibility: hidden;
+    box-shadow: 0px 0px 10px 0px rgb(0, 0, 0);
+    background: #393E46;
+    /* Lo ponemos encima de todo */
+    z-index: auto;
+    border-radius: 10px;
+}
+
+nav>ul>li:hover>ul {
+    visibility: visible;
+    top: 50px;
+}
+
+nav>ul>li>ul>li>a {
+    color: wheat;
+    padding: 6px;
+    display: block;
+    margin-left: 14px;
+    margin-top: 10px;
+    font-size: 14px;
+    text-transform: uppercase;
+    border-radius: 14px;
+}
+
+
+nav>ul>li>ul>li>a:hover {
+    color: wheat;
+    background: #636568;
+    box-shadow: 0px 0px 10px 0px rgb(0, 0, 0);
+}
+
+
+/* Inicio */
+
+
+#inicio-a {
+    font-size: 13px;
+    margin-top: 152px;
+    width: 100%;
+    padding: 25px 150px 0px 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    /* va cambiando en relacion a la pantalla, 90vh=90% de la pantalla */
+    height: 90vh;
+    color: white;
+    /* linear-g es una especie de filtro negro*/
+    background-image: linear-gradient(0deg,
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)), url(../img/inicio-a.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+#inicio-b {
+    text-align: center;
+    /* lo alejamos de arriba y de los costados */
+    padding: 100px 250px;
+    background-color: white;
+
+}
+
+#inicio-c {
+    text-align: center;
+    /* lo alejamos de arriba y de los costados */
+    padding: 100px 250px;
+    /* background-color: white; */
+
+}
+
+
+
+button {
+    padding: 15px;
+    margin: 20px;
+    background-color: steelblue;
+    color: white;
+    font-size: 13px;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+button>a {
+    color: wheat;
+}
+
+/* Contacto */
+
+#titulo-contacto {
+    margin-top: 200px;
+    text-align: center;
+    justify-content: center;
+    font-size: 14px;
+
+}
+
+#contacto {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    padding: 38.4px 76.8px;
+    width: 90%;
+    max-width: 600px;
+}
+
+form input,
+form textarea {
+    border: 0;
+    margin: 10px 0;
+    padding: 20px;
+    outline: none;
+    background: aliceblue;
+    font-size: 16px;
+}
+
+form>button {
+    padding: 15px;
+    background-color: tomato;
+    color: white;
+    font-size: 16px;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    border-radius: 10px;
+}
+/*le coloco margen para al footer y cambio color de las letras y centro el texto al centro */
+footer {
+    color: thistle;
+    text-align: center;
+    margin: 30px;
+}
+/*Le coloco ancho a las imagenes del footer*/
+footer img{
+    width: 40px;
+}
+#mps {
+    width: 80%;
+    margin: 10%;
+    text-align: center;
+}
